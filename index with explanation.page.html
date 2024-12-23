@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!-- This declaration tells the browser that this is an HTML5 document. -->
+
+<html lang="en">
+
+<!-- The opening <html> tag starts the HTML document. The 'lang="en"' attribute specifies the language as English. -->
+
+<head>
+
+    <!-- The <head> section contains metadata and links to external resources (stylesheets, scripts, etc.). -->
+    <meta charset="UTF-8">
+
+    <!-- Specifies the character encoding for the document. UTF-8 supports almost all characters. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Makes the website responsive (fits on all screen sizes like mobile, tablet, desktop). -->
+
+    <title>Prime University</title>
+
+    <!-- Sets the title of the webpage, which appears on the browser tab. -->
+    
+    <!-- Font Awesome CDN -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Links the Font Awesome library for icons (e.g., the envelope, phone icons in the contact section). -->
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Links the external CSS file 'styles.css' to style the webpage. -->
+
+    <script type="text/javascript" src="script.js"></script>
+
+    <!-- Links the external JavaScript file 'script.js' for adding interactivity to the webpage. -->
+
+</head>
+
+<body>
+    <!-- The <body> section contains the content visible on the webpage. -->
+
+    <!--------------------------- Header (Navbar) ------------------------->
+    <!-- This section creates the top navigation bar (header). -->
+
+    <header>
+
+        <div class="logo">
+            <!-- This div contains the website's logo and name. -->
+            <img src="images/logo.png" alt="Prime University Logo">
+            <!-- Displays the university's logo image. 'alt' is for screen readers or when the image fails to load. -->
+            <span class="university-name">PRIME UNIVERSITY</span>
+            <!-- Displays the text 'PRIME UNIVERSITY' next to the logo. -->
+        </div>
+        <nav>
+            <!-- This section is for navigation links (menu items). -->
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">&#x2630;</div>
+            <!-- The hamburger icon (three horizontal lines) is used for mobile menus. -->
+            
+            <!-- Navigation Links -->
+            <ul id="menu">
+                <!-- The <ul> tag creates an unordered list of links. -->
+                <li><a href="#home">HOME</a></li>
+                <!-- Each <li> (list item) contains a link (<a>) to a section of the page (e.g., #home points to the "home" section). -->
+                <li><a href="#about-us">ABOUT</a></li>
+                <li><a href="#Courses">COURSES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#login-page">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-------------------------------- Home Page--------------------------->
+
+    <!-- This section represents the homepage content. -->
+
+    <main>
+        <!-- The <main> tag contains the main content of the webpage. -->
+        <section class="home" id="home">
+            <!-- A section with a class 'home' and an id 'home' (used for styling and navigation). -->
+            <div class="home-content">
+                <!-- This div contains the text content for the home section. -->
+                <h1>PRIME<br>UNIVERSITY</h1>
+                <!-- Displays the main heading with a line break using <br>. -->
+                <p>WHERE TECHNOLOGY MEETS EXCELLENCE</p>
+                <!-- Displays the tagline of the university. -->
+            </div>
+            <div class="home-logo">
+                <!-- This div contains the larger version of the university's logo. -->
+                <img src="images/logo.png" alt="University Logo Large">
+                <!-- Displays the university's logo image again. -->
+            </div>
+        </section>
+    </main>
+
+    <!------------------------------ About Us Page ---------------------------------->
+    
+    <!-- This section represents the "About Us" page content. -->
+    <section id="about-us" class="about-us">
+        <!-- Section with an id 'about-us' and class 'about-us'. -->
+        <div class="text-container">
+            <!-- Div for text content in the About Us section. -->
+            <h2>About Us</h2>
+            <!-- Displays a heading for the About Us section. -->
+            <p>
+                <!-- A paragraph explaining the university's mission and vision. -->
+                Prime university is a leading institution 
+                dedicated to shaping the future of 
+                technology through innovation,
+                education, and research...
+            </p>
+        </div>
+
+        <!------------- Right Half - Image ------------->
+        <div class="image-container">
+            <!-- Empty div for images or visuals (can be added later). -->
+        </div>
+    </section>
+
+    <!------------------------------------ COURSES PAGE ---------------------------------->
+    <!-- This section represents the Courses page with a slider for different courses. -->
+    <div id="Courses" class="courses">
+        <div class="slider">
+            <!-- A div for a slider containing the courses. -->
+            <h1 class="page-title">Courses</h1>
+            <!-- Displays the title "Courses" for this section. -->
+
+            <!-- list Items -->
+            <div class="list">
+                <!-- This div contains the list of courses. Each course is an "item". -->
+                <div class="item active">
+                    <!-- The 'active' class marks the currently visible course in the slider. -->
+                    <img src="F:\Web Pro\Images\network.jpg">
+                    <!-- Displays the image for the Networking course. -->
+                    <div class="content">
+                        <!-- Div containing text and a button for the course. -->
+                        <h2 class="courses-h">Networking</h2>
+                        <!-- Heading for the Networking course. -->
+                        <p class="courses-p">
+                            <strong>From protocols to cloud infrastructure</strong>
+                            <!-- Short description of the Networking course. -->
+                        </p>
+                        <a href="https://www.coursera.org/learn/introduction-to-networking-nvidia" class="enroll-btn">
+                            <!-- Link to enroll in the Networking course. -->
+                            Enroll
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Similar structure is repeated for other courses like Cybersecurity, UI/UX, etc. -->
+            </div>
+
+            <!----- button arrows ----->
+            <div class="arrows">
+                <!-- Buttons for navigating through the slider (left and right arrows). -->
+                <button id="prev"><</button>
+                <!-- 'Previous' button for the slider. -->
+                <button id="next">></button>
+                <!-- 'Next' button for the slider. -->
+            </div>
+
+            <!----- thumbnail --------->
+            <div class="thumbnail">
+                <!-- Thumbnails for previewing courses in the slider. -->
+                <div class="item active">
+                    <img src="F:\Web Pro\Images\network.jpg">
+                    <div class="content">Networking</div>
+                </div>
+                <!-- Thumbnails for other courses are similarly structured. -->
+            </div>
+        </div>
+    </div>
+
+    <!----------------------------- CONTACT PAGE ----------------------------->
+   <div id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>CONTACT US</h2>
+      <p>We’d love to hear from you! Whether you have questions, need assistance, or want to learn more about Prime University, please fill out the form below.</p>
+    </div>
+
+    <div class="row">
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-info-content">
+            <h4>Address</h4>
+            <p>123 Innovation Avenue, Tech Valley, Future City, 456789</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="contact-info-content">
+            <h4>Phone</h4>
+            <p>+1 (800) 555-000 (7746)</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-info-content">
+            <h4>Email</h4>
+            <p>contact@primeuniversity.edu</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Send Message</h2>
+        <form id="contactForm" novalidate>
+          <div class="input-box">
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <span class="error-message"></span>
+          </div>
+          <div class="input-box">
+            <input type="email" id="email" placeholder="Email" required>
+            <span class="error-message"></span>
+          </div>
+          <div class="input-box">
+            <textarea id="message" placeholder="Type your Message..." required></textarea>
+            <span class="error-message"></span>
+          </div>
+          <div class="input-box">
+            <input type="submit" value="Send">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!----------------------------- LOG IN PAGE ----------------------------->
+<section id="login-page" class="login-page"> <!-- Defines the Login Page section -->
+    <div class="wrapper"> <!-- Wrapper for the entire content -->
+        <div class="title-text"> <!-- Container for the titles (Login and Signup) -->
+            <div class="title login">Login</div> <!-- Title for the Login form -->
+            <div class="title signup">Signup</div> <!-- Title for the Signup form -->
+        </div>
+        <div class="form-container"> <!-- Container for the forms and slide controls -->
+            <div class="slide-controls"> <!-- Controls to toggle between Login and Signup -->
+                <input type="radio" name="slide" id="login" checked> <!-- Radio button for Login (default selected) -->
+                <input type="radio" name="slide" id="signup"> <!-- Radio button for Signup -->
+                <label for="login" class="slide login">Login</label> <!-- Label for Login radio -->
+                <label for="signup" class="slide signup">Signup</label> <!-- Label for Signup radio -->
+                <div class="slider-tab"></div> <!-- Visual tab for the slider -->
+            </div>
+            <div class="form-inner"> <!-- Container for the actual forms -->
+                <form action="#" class="login"> <!-- Login form -->
+                    <div class="field"> <!-- Field for Email input -->
+                        <input type="text" placeholder="Email Address" required> <!-- Input for Email -->
+                    </div>
+                    <div class="field"> <!-- Field for Password input -->
+                        <input type="password" placeholder="Password" required> <!-- Input for Password -->
+                    </div>
+                    <div class="pass-link"><a href="#">Forgot password?</a></div> <!-- Link for Forgot Password -->
+                    <div class="field btn"> <!-- Submit button field -->
+                        <div class="btn-layer"></div> <!-- Decorative layer for the button -->
+                        <input type="submit" value="Login"> <!-- Login button -->
+                    </div>
+                </form>
+                <form action="#" class="signup"> <!-- Signup form -->
+                    <div class="field"> <!-- Field for Name input -->
+                        <input type="text" placeholder="Name" required> <!-- Input for Name -->
+                    </div>
+                    <div class="field"> <!-- Field for Email input -->
+                        <input type="text" placeholder="Email Address" required> <!-- Input for Email -->
+                    </div>
+                    <div class="field"> <!-- Field for Password input -->
+                        <input type="password" placeholder="Password" required> <!-- Input for Password -->
+                    </div>
+                    <div class="field"> <!-- Field for Confirm Password input -->
+                        <input type="password" placeholder="Confirm password" required> <!-- Input for Confirm Password -->
+                    </div>
+                    <div class="field btn"> <!-- Submit button field -->
+                        <div class="btn-layer"></div> <!-- Decorative layer for the button -->
+                        <input type="submit" value="Signup"> <!-- Signup button -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </section>
+
+    
+    <!----------------------------- Change Password ----------------------------->
+
+<div class="change-pass"> <!-- Wrapper for the Change Password section -->
+    <div class="container-pass"> <!-- Main container for the Change Password content -->
+        <div class="left-section-pass"> <!-- Left side of the Change Password form -->
+            <h1>Change Password</h1> <!-- Heading for the section -->
+            <form> <!-- Form for Changing Password -->
+                <div class="form-group-pass"> <!-- Group for Old Password input -->
+                    <label for="old-password">Old Password</label> <!-- Label for Old Password -->
+                    <input type="password" id="old-password" name="old-password" required> <!-- Input for Old Password -->
+                </div>
+                <div class="form-group-pass"> <!-- Group for New Password input -->
+                    <label for="new-password">New Password</label> <!-- Label for New Password -->
+                    <input type="password" id="new-password" name="new-password" required> <!-- Input for New Password -->
+                </div>
+                <button type="submit" class="btn-pass">Change My Password</button> <!-- Submit button -->
+            </form>
+        </div>
+        <div class="right-section-pass"> <!-- Right side with password requirements -->
+            <div class="requirements-pass"> <!-- Requirements list -->
+                <p>Password must contain:</p>
+                <ul>
+                    <li>At least 1 uppercase letter (A-Z)</li> <!-- Requirement 1 -->
+                    <li>At least 1 number (0-9)</li> <!-- Requirement 2 -->
+                    <li>At least 8 characters</li> <!-- Requirement 3 -->
+                </ul>
+            </div>
+        </div>
+        <div class="circle-image"> <!-- Decorative circle image -->
+            <img src="images/infinit.png" alt="Circle Image"> <!-- Image for decoration -->
+        </div>
+    </div>
+</div>
+
+ 
+    </div>
+</body>
+</html>

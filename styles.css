@@ -1,0 +1,1073 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Lastica, sans-serif;
+    background-color: #1d3263; /* Black Background */
+    color: #FFFFFF;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/*********************************** Header Styling ********************************** */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1d3263; /* Dark Blue */
+    position: fixed; /* Makes the navbar stick to the top */
+    top: 0; /* Ensures it stays at the very top */
+    width: 100%; /* Stretches the navbar across the page */
+    z-index: 1000; /* Keeps it above other elements */
+   
+
+  /*optional  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+/* Adds space to avoid overlapping content */
+body {
+    padding-top: 80px; /* Adjust this based on the navbar height */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.university-name {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+/*********************************** Navigation Menu ***********************************/
+
+/* Navigation Menu */
+nav ul {
+    display: flex; /* Use flexbox for horizontal layout */
+    list-style: none; /* Remove list item bullets */
+}
+
+/* List Items Styling */
+nav ul li {
+    margin: 0 20px; /* Add space between items */
+}
+
+/* Link Styling */
+nav ul li a {
+    font-weight: bold; /* Make the text bold */
+    display: block; /* Ensure links take full width */
+    text-decoration: none; /* Remove underlines */
+    padding: 5px; /* Padding around the link */
+    font-size: 18px; /* Font size */
+    color: #FFFFFF; /* White text color */
+    text-transform: uppercase; /* Uppercase text */
+    transition: 0.5s; /* Smooth transition for hover effects */
+}
+
+/* Hover Effects on Navigation Items */
+nav ul:hover li a {
+    transform: scale(1.5); /* Enlarge the link */
+    opacity: 0.2; /* Fade the link */
+    filter: blur(5px); /* Blur the text */
+}
+
+/* Hover Effects for Links */
+nav ul li a:hover {
+    transform: scale(2); /* Increase scale */
+    opacity: 1; /* Fully opaque */
+    filter: blur(0); /* Remove blur */
+    color: #1d3263; /* Change text color */
+}
+
+/* Animated Underline Effect */
+nav ul li a::before {
+    content: ''; /* Empty content for the underline */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top of the link */
+    left: 0; /* Align to the left of the link */
+    width: 100%; /* Full width of the link */
+    height: 100%; /* Full height of the link */
+    background: #f2f2f2; /* Light background for underline */
+    transition: 0.5s; /* Smooth transition for animation */
+    transform-origin: right; /* Start the scaling from the right */
+    transform: scaleX(0); /* Initially hide the underline */
+    z-index: -1; /* Place it behind the text */
+}
+
+/* Hover Effect on Underline */
+nav ul li a:hover::before {
+    transform-origin: left; /* Change the origin to left */
+    transform: scaleX(1); /* Reveal the underline */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px; /* Larger font size */
+    color: #FFFFFF; /* White color */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/*********************************** Hamburger Menu ***********************************/
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+/*********************************** Home Section ***********************************/
+/* Home Section */
+.home {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    flex-wrap: wrap; /* Allow content to wrap */
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px; /* Padding around content */
+    background-color: #1d3263; /* Dark blue background */
+}
+
+/* Content Container */
+.home-content {
+    letter-spacing: .2rem; /* Add spacing between letters */
+    text-align: left; /* Left align text */
+    margin-left: 150px; /* Space from the left */
+    margin-bottom: 150px; /* Space from the bottom */
+    flex: 1 1 300px; /* Flexible width with minimum size */
+}
+
+/* Main Heading */
+.home-content h1 {
+    font-family: lastica; /* Custom font */
+    font-size: 72px; /* Large font size */
+    line-height: 1.2; /* Adjust line height */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 20px; /* Space below heading */
+    letter-spacing: 3px; /* Spacing between letters */
+}
+
+/* Paragraph Text */
+.home-content p {
+    font-family: lastica; /* Custom font */
+    font-weight: bold; /* Bold text */
+    font-size: 20px; /* Font size for text */
+    color: #fff; /* White color for text */
+}
+
+/* Logo Container */
+.home-logo {
+    flex: 1 1 300px; /* Flexible size for logo */
+}
+
+/* Logo Image Styling */
+.home-logo img {
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive Styles for Mobile (Max Width: 768px) */
+@media (max-width: 768px) {
+    /* Hamburger menu visibility */
+    .hamburger {
+        display: block; /* Show hamburger menu */
+    }
+
+    /* Navigation Menu */
+    nav ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column; /* Stack items vertically */
+        background-color: #1d3263; /* Dark blue background */
+        position: absolute; /* Absolute position relative to the parent */
+        top: 100%; /* Position below the header */
+        left: 0; /* Align to the left */
+        width: 100%; /* Full width */
+        padding: 10px 0; /* Padding around the menu */
+        text-align: center; /* Center align text */
+        z-index: 999; /* Ensure menu is above other elements */
+    }
+
+    /* Show menu when active */
+    nav ul.active {
+        display: flex; /* Show menu */
+    }
+
+    /* Menu List Item */
+    nav ul li {
+        margin: 10px 0; /* Space between items */
+    }
+
+    /* Adjust Heading and Text for Mobile */
+    .home-content h1 {
+        font-size: 48px; /* Smaller font size */
+    }
+
+    .home-content p {
+        font-size: 16px; /* Smaller font size */
+    }
+
+    /* Adjust Logo Image */
+    .home-logo img {
+        max-width: 250px; /* Limit width for logo */
+    }
+}
+
+/* Responsive Styles for Small Devices (Max Width: 480px) */
+@media (max-width: 480px) {
+    /* Header Padding */
+    header {
+        padding: 10px 20px; /* Adjust padding */
+    }
+
+    /* Logo Image */
+    .logo img {
+        height: 40px; /* Smaller logo */
+    }
+
+    /* University Name */
+    .university-name {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    /* Adjust Heading and Text for Smaller Devices */
+    .home-content h1 {
+        font-size: 36px; /* Smaller heading */
+    }
+
+    .home-content p {
+        font-size: 14px; /* Smaller text */
+    }
+}
+
+/* Global Reset */
+* {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Ensure consistent box sizing */
+}
+
+
+
+  /***********************************About us Page ********************************** */
+
+    /**************** Full Page Container ****************/
+
+    .about-us {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Left Half - Text Container */
+.text-container {
+    flex: 1; /* Takes up 1/3 of the space */
+    background-color: #f2f2f2; /* Light grey background */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    padding: 50px; /* Padding inside the container */
+    text-align: left; /* Left align text */
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1); /* Light shadow on right */
+}
+
+/* Heading Style */
+.text-container h2 {
+    font-size: 4rem; /* Large font size for heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #1d3263; /* Dark blue color */
+    font-family: lastica; /* Custom font */
+}
+
+/* Paragraph Style */
+.text-container p {
+    padding: 30px; /* Padding for paragraph */
+    color: #1d3263; /* Dark blue color */
+    font-family: Montserrat; /* Font family for text */
+    font-size: 1.7rem; /* Large font size */
+    font-weight: bold; /* Bold text */
+    line-height: 1.6; /* Line spacing for better readability */
+    max-width: 500px; /* Max width of paragraph */
+}
+
+/* Right Half - Image Container */
+.image-container {
+    flex: 2; /* Takes up 2/3 of the space */
+    background: url('images/aboutus.jpg') no-repeat center center/cover; /* Background image */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-us {
+        flex-direction: column; /* Stack the sections vertically on smaller screens */
+        height: auto; /* Let the height adjust to content */
+    }
+
+    /* Image container adjustments for mobile */
+    .image-container {
+        width: 100%; /* Full width on mobile */
+        height: 50vh; /* Adjustable height for better fit */
+        min-height: 250px; /* Minimum height for image */
+        background-size: cover; /* Ensure background scales nicely */
+        background-position: center; /* Center the background image */
+    }
+
+    /* Text container adjustments for mobile */
+    .text-container {
+        padding: 20px; /* Less padding on smaller screens */
+        text-align: center; /* Center text on mobile */
+    }
+}
+
+/*********************************** COURSES PAGE ***********************************/
+
+/* Title styles: Ensures the title is centered and has a bold appearance */
+.page-title {
+    text-align: center; /* Center horizontally */
+    font-size: 3rem; /* Large font size */
+    font-family: lastica; /* Custom font */
+    font-weight: bold; /* Bold text */
+    color: #FFF; /* Use a matching color */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Add spacing between letters */
+    position: relative; /* Stable positioning */
+    z-index: 50; /* Ensures it's above other elements */
+    margin: 0px; /* No margin */
+    top: 30px; /* Position 30px from the top */
+}
+
+/* Slider container: Ensures the slider takes up the full height of the viewport */
+.slider {
+    height: 100vh; /* Full height of the viewport */
+    position: relative; /* Allows for absolute positioning of inner elements */
+}
+
+/* Styling for the courses section */
+h2.courses-h {
+    color: #fff; /* White text */
+    font-family: Montserrat; /* Font family */
+    font-size: 1rem; /* Smaller font size */
+}
+
+p.courses-p {
+    color: #fff; /* White text */
+    font-family: Montserrat; /* Font family */
+    font-size: 1.2rem; /* Slightly larger font size */
+}
+
+/* Keyframe animation for button fade-in effect */
+@keyframes fadeSlideIn {
+    0% {
+        transform: translateY(30px); /* Start slightly below */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateY(0); /* Move to original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Button styles */
+.enroll-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 15px 20px;
+    background-color: #1d3263; /* Dark blue background */
+    color: #fff; /* White text */
+    font-size: 18px; /* Font size for the text */
+    text-decoration: none; /* Removes underline from link */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Start below */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transition */
+}
+
+/* When the item becomes active, trigger animation for button */
+.slider .list .item.active .enroll-btn {
+    animation: fadeSlideIn 1s ease forwards; /* Trigger fadeSlideIn animation */
+    animation-delay: 1.3s; /* Delay for smooth appearance after text */
+}
+
+/* Hover effect for the button */
+.enroll-btn:hover {
+    background-color: #532c96; /* Change background to purple */
+    color: #000; /* Change text to black */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Styling for slider items */
+.slider .list .item {
+    position: absolute;
+    inset: 0 0 0 0; /* Covers the entire slider area */
+    overflow: hidden; /* Hides overflow */
+    opacity: 0; /* Initially hidden */
+    transition: .5s; /* Smooth transition */
+}
+
+/* Slider image styling */
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers area */
+}
+
+/* Overlay gradient effect for items */
+.slider .list .item::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, #000 40%, transparent);
+}
+
+/* Content inside slider items */
+.slider .list .item .content {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1; /* Ensures content is above background */
+}
+
+/* Text in the content */
+.slider .list .item .content p:nth-child(1) {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.slider .list .item .content h2 {
+    font-size: 70px; /* Large title */
+    margin: 0;
+}
+
+/* Active state for slider items */
+.slider .list .item.active {
+    opacity: 1; /* Fully visible */
+    z-index: 10; /* Above other items */
+}
+
+/* Keyframe animation for showing content with blur and movement */
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for active content */
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3) {
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards; /* Smooth appearance */
+}
+
+/* Delayed animation for content elements */
+.slider .list .item.active h2 {
+    animation-delay: 1s; /* Delayed animation for heading */
+}
+
+.slider .list .item.active p:nth-child(3) {
+    animation-duration: 1.3s; /* Longer duration for the paragraph */
+}
+
+/* Arrow button styles for slider navigation */
+.arrows {
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100; /* Above other elements */
+}
+
+.arrows button {
+    background-color: #eee5; /* Light background */
+    border: none; /* No border */
+    font-family: monospace; /* Monospace font */
+    width: 40px; /* Button width */
+    height: 40px; /* Button height */
+    border-radius: 5px; /* Rounded corners */
+    font-size: x-large; /* Large font size */
+    color: #eee; /* Light text */
+    transition: .5s; /* Smooth transition */
+}
+
+/* Hover effect for arrows */
+.arrows button:hover {
+    background-color: #eee; /* Light background on hover */
+    color: black; /* Dark text on hover */
+}
+
+/* Thumbnail container for images */
+.thumbnail {
+    font-family: Montserrat; /* Custom font */
+    position: absolute;
+    bottom: 50px; /* Position thumbnails near the bottom */
+    z-index: 11;
+    display: flex; /* Horizontal layout */
+    gap: 10px; /* Spacing between items */
+    width: 100%;
+    height: 250px; /* Fixed height */
+    padding: 0 50px; /* Padding for spacing */
+    box-sizing: border-box; /* Ensures padding doesn't affect size */
+    overflow: auto; /* Allows scrolling */
+    justify-content: center; /* Centers items */
+}
+
+/* Custom scrollbar for thumbnails */
+.thumbnail::-webkit-scrollbar {
+    width: 0; /* Hides the scrollbar */
+}
+
+/* Thumbnail item styling */
+.thumbnail .item {
+    width: 150px; /* Fixed width */
+    height: 220px; /* Fixed height */
+    filter: brightness(.5); /* Dim image */
+    transition: .5s; /* Smooth transition */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Thumbnail image styling */
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Active thumbnail item effect */
+.thumbnail .item.active {
+    filter: brightness(1.5); /* Brightens active item */
+}
+
+/* Content inside thumbnail items */
+.thumbnail .item .content {
+    position: absolute;
+    inset: auto 10px 10px 10px;
+    color: #fff; /* White text */
+    font-size: 1.5rem; /* Large font size */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 678px) {
+    .thumbnail {
+        justify-content: start; /* Align items to the left */
+    }
+
+    /* Adjust font size for smaller screens */
+    .slider .list .item .content h2 {
+        font-size: 60px; /* Smaller font size */
+    }
+
+    /* Adjust position of arrows on small screens */
+    .arrows {
+        top: 10%; /* Higher position */
+    }
+}
+
+
+
+
+/********************************** CONTACT PAGE **********************************/
+
+/* 
+  Import the "Poppins" font from Google Fonts to be used throughout the site.
+  This font gives the text a modern and clean look.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* 
+  Reset padding, margin, and box-sizing for all elements to ensure consistent styling across the page.
+  Also, apply the 'Poppins' font to all elements on the page.
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Ensures padding and border do not affect the width/height of elements */
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font throughout the page */
+}
+
+/* 
+  Main contact section: This container takes up at least the full height of the viewport (100vh).
+  It uses flexbox to center the content both horizontally and vertically.
+*/
+.contact {
+  min-height: 100vh; /* Ensures the section takes at least the full height of the screen */
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  background-color: #f2f2f2; /* Light grey background for the section */
+  width: 100%; /* Ensures the section spans the entire width of the screen */
+}
+
+/* 
+  The container holds the content, with a maximum width of 1080px.
+  It is centered and has padding for spacing.
+*/
+.container {
+  max-width: 1080px; /* Prevents the container from becoming too wide */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 20px; /* Adds padding inside the container */
+}
+
+/* 
+  Section header styles for the contact section.
+  The header is centered, and the text has a specific color and font size.
+*/
+.section-header {
+  text-align: center; /* Centers the header text */
+  margin-bottom: 50px; /* Adds spacing below the header */
+}
+
+.section-header h2 {
+  color: #1d3263; /* Dark blue color for the header */
+  font-weight: bold; /* Makes the header text bold */
+  font-size: 3em; /* Larger font size for the header */
+  font-family: lastica; /* Custom font for the header */
+}
+
+.section-header p {
+  color: #1d3263; /* Dark blue color for the paragraph */
+  margin-top: 10px; /* Adds spacing above the paragraph */
+  font-family: Montserrat; /* Font family for the paragraph */
+  font-size: 1.2rem; /* Medium font size */
+}
+
+/* 
+  Row layout for the contact info and contact form sections.
+  Uses flexbox to display the items side by side and allows them to wrap when needed.
+*/
+.row {
+  display: flex; /* Enables flexbox layout */
+  flex-wrap: wrap; /* Allows the items to wrap to the next line when necessary */
+  justify-content: space-between; /* Distributes space between items */
+}
+
+/* 
+  Contact info section: Takes up 45% of the available width.
+*/
+.contact-info {
+  width: 45%; /* Sets the width to 45% */
+}
+
+/* 
+  Contact info item: A flex container for each piece of contact information.
+  Each item has a small gap between the icon and the text.
+*/
+.contact-info-item {
+  display: flex; /* Enables flexbox for the item */
+  align-items: center; /* Aligns items vertically in the center */
+  margin-bottom: 30px; /* Adds spacing below each item */
+}
+
+/* 
+  Icon container for contact info: Circular background with a shadow effect.
+*/
+.contact-info-icon {
+  background-color: #ffffff; /* White background */
+  color: #333; /* Dark color for the icon */
+  border-radius: 50%; /* Circular shape */
+  width: 70px; /* Fixed size */
+  height: 70px; /* Fixed size */
+  display: flex; /* Enables flexbox for centering the icon */
+  justify-content: center; /* Centers the icon horizontally */
+  align-items: center; /* Centers the icon vertically */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the icon */
+}
+
+.contact-info-icon i {
+  font-size: 24px; /* Sets the icon size */
+}
+
+/* 
+  Contact info content: Adds some margin to the left of the text for spacing.
+*/
+.contact-info-content {
+  margin-left: 15px; /* Adds spacing between the icon and the text */
+}
+
+.contact-info-content h4 {
+  color: #1d3263; /* Dark blue color for the heading */
+  font-size: 1.2em; /* Slightly larger font size for the heading */
+  margin-bottom: 5px; /* Adds spacing below the heading */
+}
+
+.contact-info-content p {
+  color: #1d3263; /* Dark blue color for the paragraph */
+  font-size: 1em; /* Default font size for the paragraph */
+}
+
+/* 
+  Contact form container: White background with padding and box shadow.
+  It also has a fixed width of 45%.
+*/
+.contact-form {
+  background-color: #fff; /* White background */
+  padding: 30px; /* Adds padding inside the form */
+  width: 45%; /* Sets the width to 45% */
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the form */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* 
+  Contact form header: Larger, bold text for the form title.
+*/
+.contact-form h2 {
+  color: #333; /* Dark color for the title */
+  font-size: 1.8em; /* Larger font size for the title */
+  margin-bottom: 10px; /* Adds spacing below the title */
+}
+
+/* 
+  Input box container: Used for the text fields (input and textarea).
+  Position is relative to handle the floating labels.
+*/
+.contact-form .input-box {
+  position: relative; /* Allows absolute positioning of the label */
+  margin: 20px 0; /* Adds spacing between the fields */
+}
+
+/* 
+  Input and textarea styles: Both inputs share the same styles for width, padding, and font size.
+*/
+.contact-form .input-box input,
+.contact-form .input-box textarea {
+  width: 100%; /* Full width */
+  border: none; /* Removes default border */
+  border-bottom: 2px solid #333; /* Adds a bottom border for focus effect */
+  padding: 10px; /* Adds padding inside the input/textarea */
+  font-size: 16px; /* Sets the font size */
+  outline: none; /* Removes the outline on focus */
+}
+
+/* 
+  Floating label: Initially positioned at the top of the input, moves when focused.
+*/
+.contact-form .input-box span {
+  position: absolute; /* Positions the label inside the input box */
+  left: 0; /* Aligns the label to the left */
+  top: 10px; /* Positions the label slightly lower than the top edge */
+  transition: 0.3s; /* Smooth transition for the floating effect */
+  color: #888; /* Light gray color for the label */
+}
+
+/* 
+  Label effect when input is focused or contains text:
+  Moves the label up and changes its color to pink.
+*/
+.contact-form .input-box input:focus ~ span,
+.contact-form .input-box textarea:focus ~ span,
+.contact-form .input-box input:not(:placeholder-shown) ~ span,
+.contact-form .input-box textarea:not(:placeholder-shown) ~ span {
+  color: #e91e63; /* Changes label color to pink when focused */
+  transform: translateY(-20px); /* Moves the label up */
+  font-size: 12px; /* Reduces font size */
+}
+
+/* 
+  Submit button styles: Blue background with white text.
+*/
+.contact-form .input-box input[type="submit"] {
+  background: #00bcd4; /* Blue background */
+  color: #fff; /* White text */
+  padding: 10px; /* Padding around the text */
+  border: none; /* Removes border */
+  font-size: 18px; /* Font size for the text */
+  cursor: pointer; /* Changes the cursor to a pointer when hovered */
+  transition: 0.3s; /* Smooth transition effect */
+  text-transform: uppercase; /* Uppercase text */
+}
+
+/* 
+  Button hover effect: Changes background to white with blue text.
+*/
+.contact-form .input-box input[type="submit"]:hover {
+  background: #fff; /* White background */
+  color: #00bcd4; /* Blue text */
+  border: 1px solid #00bcd4; /* Adds a blue border */
+}
+
+/* 
+  Responsive design for screens smaller than 991px (tablets and smaller screens).
+  Changes the layout to stack elements vertically and adjust their widths.
+*/
+@media (max-width: 991px) {
+  .row {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%; /* Set both to 100% width */
+    margin-bottom: 20px; /* Adds spacing between the sections */
+  }
+}
+
+/* 
+  Styling for the error message under input fields:
+  The error message appears in red below the field when there’s an issue.
+*/
+.input-box {
+  position: relative; /* Allows the error message to be positioned below the field */
+  margin-bottom: 30px; /* Adds spacing for error messages */
+}
+
+/* 
+  Style for error messages: Red color and small font size.
+*/
+.error-message {
+  color: red; /* Red color for the error message */
+  font-size: 12px; /* Small font size */
+  margin-top: 5px; /* Adds spacing above the message */
+  display: block; /* Ensures the error message is displayed as a block element */
+  position: relative; /* Keeps the message in normal flow */
+}
+
+/* 
+  Adjusts input and textarea when error messages appear:
+  Adds spacing below the fields to avoid overlap with error messages.
+*/
+.input-box input,
+.input-box textarea {
+  margin-bottom: 10px; /* Adds margin below the input/textarea */
+}
+
+/* LOG IN PAGE */
+
+/* 
+  Login page layout: Centers the login form both horizontally and vertically
+  in the full viewport height.
+*/
+.login-page {
+  font-family: sans-serif; /* Sets a sans-serif font for the login page */
+  color: white; /* White text color */
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically */
+  width: 100%; /* Takes full width */
+  height: 100vh; /* Takes full viewport height */
+  position: relative; /* Allows for positioning elements inside the page */
+}
+
+
+
+/********************************* Change Password *************************************/
+
+
+/* Styling for the main change-password container */
+.change-pass {
+    margin: 0; /* Removes any default margin */
+    height: 100vh; /* Sets the height to cover the entire viewport */
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    background-color: #f4f4f4; /* Light gray background color */
+    color: #1d3263; /* Dark blue text color */
+}
+
+/* Styling for the container holding the change-password form */
+.container-pass {
+    background-color: #ffffff; /* White background for the container */
+    padding: 40px; /* Adds spacing inside the container */
+    border-radius: 12px; /* Rounds the corners */
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    width: 900px; /* Sets the container width */
+    height: 500px; /* Sets the container height */
+    position: relative; /* Positions elements relative to this container */
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Spreads child elements evenly */
+    align-items: flex-start; /* Aligns items to the top */
+}
+
+/* Styling for the left section of the container */
+.left-section-pass {
+    width: 55%; /* Allocates 55% of the container width */
+}
+
+/* Styling for the heading inside the left section */
+.left-section-pass h1 {
+    font-family: lastica; /* Custom font for the heading */
+    letter-spacing: .3rem; /* Adds spacing between letters */
+    font-weight: bold; /* Makes the text bold */
+    font-size: 26px; /* Sets the font size */
+    margin-bottom: 30px; /* Adds spacing below the heading */
+    color: #1d3263; /* Dark blue text color */
+    text-transform: uppercase; /* Converts text to uppercase */
+}
+
+/* Styling for each form group (label and input) */
+.form-group-pass {
+    margin-bottom: 25px; /* Adds spacing below each form group */
+    text-align: left; /* Aligns text to the left */
+}
+
+/* Styling for the labels inside form groups */
+.form-group-pass label {
+    font-family: Montserrat; /* Sets the font for labels */
+    display: block; /* Makes the label take up its own line */
+    font-size: 20px; /* Sets the label font size */
+    margin-bottom: 8px; /* Adds spacing below the label */
+    font-weight: bold; /* Makes the label text bold */
+}
+
+/* Styling for the input fields */
+.form-group-pass input {
+    width: 100%; /* Makes the input take the full width */
+    padding: 12px; /* Adds padding inside the input */
+    font-size: 14px; /* Sets the font size */
+    border: 1px solid #ccc; /* Adds a light gray border */
+    border-radius: 6px; /* Rounds the corners */
+}
+
+/* Styling for the submit button */
+.btn-pass {
+    background-color: #1d3263; /* Dark blue background */
+    color: #ffffff; /* White text color */
+    margin-top: 20px; /* Adds spacing above the button */
+    padding: 16px 70px; /* Adds padding inside the button */
+    font-size: 11px; /* Sets the font size */
+    font-family: lastica; /* Sets the button font */
+    font-weight: bold; /* Makes the text bold */
+    letter-spacing: .2rem; /* Adds spacing between letters */
+    border: none; /* Removes the border */
+    border-radius: 8px; /* Rounds the corners */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    text-transform: uppercase; /* Converts text to uppercase */
+}
+
+/* Styling for the button on hover */
+.btn-pass:hover {
+    background-color: #142243; /* Darker blue background on hover */
+}
+
+/* Styling for the right section of the container */
+.right-section-pass {
+    position: relative; /* Positions elements relative to this section */
+    top: 80px; /* Moves the section down */
+    left: 70px; /* Moves the section to the right */
+    width: 40%; /* Allocates 40% of the container width */
+    text-align: left; /* Aligns text to the left */
+}
+
+/* Styling for the password requirements box */
+.requirements-pass {
+    position: relative; /* Positions elements relative to this box */
+    top: 25px; /* Moves the box down */
+    right: 20px; /* Moves the box left */
+    font-size: 16px; /* Sets the font size */
+    margin-bottom: 20px; /* Adds spacing below the box */
+    color: #1d3263; /* Dark blue text color */
+}
+
+/* Styling for the paragraph inside the requirements box */
+.requirements-pass p {
+    padding-bottom: 5px; /* Adds padding below the paragraph */
+    font-weight: bold; /* Makes the text bold */
+}
+
+/* Styling for the unordered list */
+.requirements-pass ul {
+    list-style: none; /* Removes default list styling */
+}
+
+/* Styling for each list item */
+.requirements-pass ul li {
+    margin-bottom: 8px; /* Adds spacing below each item */
+}
+
+/* Styling for the circular image */
+.circle-image {
+    position: absolute; /* Positions the image absolutely */
+    bottom: 30px; /* Positions it 30px from the bottom */
+    right: 100px; /* Positions it 100px from the right */
+    width: 140px; /* Sets the circle width */
+    height: 140px; /* Sets the circle height */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Hides overflow outside the circle */
+}
+
+/* Ensures the image fits inside the circle */
+.circle-image img {
+    width: 100%; /* Makes the image fit the circle width */
+    height: 100%; /* Makes the image fit the circle height */
+    object-fit: cover; /* Ensures the image scales without distortion */
+}
+
+/* Responsive design for screens smaller than 768px */
+@media (max-width: 768px) {
+    .container-pass {
+        flex-direction: column; /* Stacks elements vertically */
+        align-items: center; /* Centers elements horizontally */
+        width: 90%; /* Reduces container width */
+        height: auto; /* Allows height to adjust automatically */
+        padding: 20px; /* Reduces padding */
+    }
+
+    .left-section-pass, .right-section-pass {
+        width: 100%; /* Sets both sections to full width */
+        text-align: center; /* Centers text */
+    }
+
+    .right-section-pass {
+        top: 0; /* Removes top offset */
+        left: 0; /* Removes left offset */
+        margin-top: 20px; /* Adds spacing above */
+    }
+
+    .circle-image {
+        bottom: 20px; /* Reduces bottom offset */
+        left: 70%; /* Adjusts horizontal position */
+        transform: translateX(50%); /* Centers the circle */
+        width: 100px; /* Reduces circle size */
+        height: 100px; /* Reduces circle size */
+    }
+}
+
+/* Further adjustments for screens smaller than 515px */
+@media (max-width: 515px) {
+    .form-group-pass label {
+        font-size: 16px; /* Reduces label font size */
+    }
+
+    .form-group-pass input {
+        padding: 10px; /* Reduces input padding */
+        font-size: 12px; /* Reduces input font size */
+    }
+
+    .btn-pass {
+        padding: 10px 20px; /* Reduces button padding */
+        font-size: 14px; /* Increases button font size */
+    }
+
+    .requirements-pass {
+        font-size: 14px; /* Reduces font size */
+    }
+
+    .circle-image {
+        bottom: 10px; /* Reduces bottom offset */
+        right: 80%; /* Adjusts horizontal position */
+        transform: translateX(50%); /* Centers the circle */
+        width: 70px; /* Reduces circle size */
+        height: 70px; /* Reduces circle size */
+    }
+}
